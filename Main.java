@@ -1,12 +1,17 @@
-// Uso
+// Clase principal para probar
 public class Main {
     public static void main(String[] args) {
-        Notificacion notificacion = new NotificacionCorreo(); //creamos la notificacion básica (Por correo)
-        notificacion = new NotificacionSMS(notificacion); //creamos la notificacion por sms
-        notificacion = new NotificacionSlack(notificacion); //creamos la notificación por slack
-        notificacion = new NotificacionFacebook(notificacion); //creamos la notificación por facebook
+        Pizza miPizza1 = new PizzaBasica(); //creamos la pizza
+        miPizza1 = new Queso(miPizza1); //le agregamos queso
+        miPizza1 = new Pepperoni(miPizza1);// le agregamos pepperoni
+        System.out.println(miPizza1.descripcion());  
+        System.out.println("Costo: $" + miPizza1.costo()); //imprimimos la descripción y el costo de la pizza de queso y pepperoni
 
-        notificacion.enviar("¡Hola mundo!"); //enviamos notificaciones
+        Pizza miPizza2 = new PizzaBasica(); //creamos otra pizza
+        miPizza2 = new Queso(miPizza2) 
+        miPizza2 = new Jamón(miPizza2); //le agregamos queso y jamón
+        System.out.println(miPizza1.descripcion());  
+        System.out.println("Costo: $" + miPizza1.costo()); //imprimimos la descripción y el costo de la pizza de jamón y queso
+        
     }
 }
-
